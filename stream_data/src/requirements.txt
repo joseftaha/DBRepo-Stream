@@ -5,3 +5,4 @@ sqlalchemy
 pika==1.2.0
 dbrepo==0.1.5
 regex
+python-dotenv
