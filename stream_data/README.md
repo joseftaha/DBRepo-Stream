@@ -1,4 +1,4 @@
-# DBRepo - Airquality Data Stream
+# DBRepo - Austrian Airquality Data Stream
 This folder contains a python script which periodically scrapes real time austrian airquality data (every 30 minutes) from [luft.umweltbundesamt.at](https://luft.umweltbundesamt.at/pub/map_chart/index.pl). This stream data is then directly persisted in a DBRepo instance via its build in Rabbit MQ broker.
 
 # Installation
