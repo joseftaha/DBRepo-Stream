@@ -138,11 +138,11 @@ def send(df : pd.DataFrame):
 
     # check if table for airquality already exists
     db_info = client.fetch_table_info(cid,dbid)
-    db_contains_table = not db_info.empty and db_info['name'].str.contains(db_name).any()
+    db_contains_table = not db_info.empty and db_info['name'].str.contains('^data$', regex=True).any()
 
     # generate database if not exist
     if not db_contains_table:
-        generate_dbrepo_table(db_name, db_desc)
+        generate_dbrepo_table('data', db_desc)
 
     # connect to dbrepo broker via AMPQ
     credentials = pika.PlainCredentials(user, passw)
@@ -153,7 +153,7 @@ def send(df : pd.DataFrame):
     # send data tuples to dbrepo table
     for _, row in df.iterrows():
         payload = row.to_json()
-        channel.basic_publish(exchange=db_name.lower(), routing_key=db_name, body=payload)
+        channel.basic_publish(exchange=db_name.lower(), routing_key='data', body=payload)
 
     # close AMPQ connection
     channel.close()
