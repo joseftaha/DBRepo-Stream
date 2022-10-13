@@ -16,7 +16,9 @@ pip3 install -r requirements.txt           # install all necessary libraries
 python3 airquality.py                      # run the airquality data stream
 ```
 # Configuartion
-All necessary configuations such as the DBRepo instance (default [https://dbrepo.ossdip.at](https://dbrepo.ossdip.at)) and credentials and database location to insert the stream data can be changed in the `.env` file. Please make sure that all enviorment variables are provided. Yo do not need to create any DBRepo database or table, these are generated automatically with the provided information.
+All necessary configuations such as the DBRepo instance (default [https://dbrepo.ossdip.at](https://dbrepo.ossdip.at)) and credentials and database location to insert the stream data can be changed in the `.env` file. Please make sure that all enviorment variables are provided. 
+
+**_NOTE:_** There is no need to create any DBRepo database or table, these are generated automatically with the provided information.
 ```sh
 DBREPO_RABBITMQ_BROKER_URL=<DBRepo Rabbit MQ URL/IP> (default 128.130.202.19)
 DBREPO_RABBITMQ_BROKER_PORT=<DBRepo Rabbit MQ Port> (default 5672)
