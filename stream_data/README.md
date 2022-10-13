@@ -12,7 +12,7 @@ docker run airquality-stream               # run a container
 [Alternative]: The data stream script can also be started without Docker. Therefore it is important to have `python3` and `pip3` and all necessary libraries in `requirements.txt`:
 ```sh
 apt install python3 python3-pip            # install python and pip manager
-pip3 install -r requirements.txt           # install all necessary libraries
+pip3 install -r src/requirements.txt       # install all necessary libraries
 python3 airquality.py                      # run the airquality data stream
 ```
 # Configuartion
